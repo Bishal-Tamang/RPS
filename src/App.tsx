@@ -3,17 +3,13 @@ import './App.css';
 import Header from './component/Header';
 import Play from './component/Play';
 import Game from './component/Game';
-import Footer from './component/Footer';
-import { useState, useEffect } from 'react';
+import Rules from './component/Rules';
+import { useState } from 'react';
 
 const App = () => {
 
   const [myChoice, setMyChoice] = useState<string>("");
   const [score, setScore] = useState<number>(0);
-
-  useEffect(() => {
-    console.log('Current Choice: ', myChoice);
-  }, [myChoice]);
 
   return (
     <>
@@ -37,7 +33,7 @@ const App = () => {
 
         </Routes>
 
-        <Footer />
+        <Rules />
       </div>
     </>
   );

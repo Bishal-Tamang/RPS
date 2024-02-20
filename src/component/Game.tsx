@@ -53,16 +53,16 @@ const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
 
   useEffect(() => {
     Result();
-  }, [bishalChoice]);
+  }, [bishalChoice, myChoice]);
 
   return (
-    <div className='game flex mt-12 flex-nowrap items-center'>
-      <div className="game__you flex flex-col">
-        <span className="text uppercase text-2xl mb-10 font-barlow">
+    <div className='flex mt-12 flex-nowrap items-center'>
+      <div className="flex flex-col">
+        <span className="text uppercase text-2xl mb-10 font-barlow text-center">
           You Picked
         </span>
         <div
-          className="icon icon--paper h-60 w-60 rounded-full border-solid border-[25px]"
+          className={`h-60 w-60 rounded-full border-solid border-8 bg-white ${myChoice === 'rock' ? 'border-rockGradient' : myChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
           style={{
             backgroundImage: `${myChoice === 'rock' ? `url(${Rock})` : myChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
             backgroundSize: '50%',
@@ -75,33 +75,33 @@ const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
       </div>
 
       {playerWin === 'win' ? (
-        <div className="result_play">
-          <span className="text">You Win</span>
+        <div className="flex flex-col mx-8">
+          <span className="uppercase text-5xl mb-2 font-barlow">You Win</span>
           <Link
             to='/'
-            className='play-again'
+            className='bg-white uppercase py-2 px-4 rounded-md text-sm text-black text-center font-barlow  shadow-md shadow-gray-400'
             onClick={() => setBishalChoice("")}
           >
             Play Again
           </Link>
         </div>
       ) : playerWin === 'lose' ? (
-        <div className="result_play flex flex-col mx-8">
-          <span className="text uppercase text-5xl mb-2">You Lost</span>
+        <div className="flex flex-col mx-8">
+          <span className="text uppercase text-5xl mb-2 font-barlow ">You Lost</span>
           <Link
             to='/'
-            className='play-again bg-white uppercase py-2 px-4 rounded-md text-sm text-black'
+            className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-black shadow-md shadow-gray-400'
             onClick={() => setBishalChoice("")}
           >
             Play Again
           </Link>
         </div>
       ) : playerWin === 'draw' ? (
-        <div className="result_play">
-          <span className="text">Draw</span>
+        <div className="flex flex-col mx-8">
+          <span className="uppercase text-5xl mb-2 font-barlow">Draw</span>
           <Link
             to='/'
-            className='play-again'
+            className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-black shadow-md shadow-gray-400'
             onClick={() => setBishalChoice("")}
           >
             Play Again
@@ -110,11 +110,12 @@ const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
       ) : null}
 
       <div className="game__house flex flex-col">
-        <span className="text uppercase text-2xl mb-10 font-barlow">
+        <span className="text uppercase text-2xl mb-10 font-barlow text-center">
           Bishal Picked
         </span>
         <div
-          className="icon icon--paper h-60 w-60 rounded-full border-solid border-[25px]"
+          // className="icon icon--paper h-60 w-60 rounded-full border-solid border-8 bg-white"
+          className={`h-60 w-60 border-solid rounded-full border-8 bg-white ${bishalChoice === 'rock' ? 'border-rockGradient' : bishalChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
           style={{
             backgroundImage: `${bishalChoice === 'rock' ? `url(${Rock})` : bishalChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
             backgroundSize: '50%',
@@ -131,10 +132,3 @@ const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
 }
 
 export default Game
-
-
-// MyChoie: {myChoice} <br />
-// Bishal's Choice: {bishalChoice} <br />
-
-// Result:
-
