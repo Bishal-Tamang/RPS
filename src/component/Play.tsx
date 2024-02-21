@@ -17,11 +17,10 @@ const Play = ({ setMyChoice }: PlayProps) => {
   return (
     <div className='play w-full relative mt-12 flex flex-col'>
       <img src={Triangle} alt="" className='absolute self-center mt-16' />
-      {/* <div className='items flex justify-center'> */}
       <div className='flex justify-center'>
         <Link to='/game'>
           <div
-            className='h-40 w-40 bg-white border-paperGradient border-8 border-solid rounded-full shadow-inner hover:scale-110 duration-300 ease-linear -translate-x-28'
+            className='h-40 w-40 bg-white border-paperGradient border-8 border-solid rounded-full shadow-inner hover:scale-110 duration-300 ease-linear -translate-x-24 md:-translate-x-28'
             style={{
               backgroundImage: `url(${Paper})`,
               backgroundPosition: 'center',
@@ -32,7 +31,7 @@ const Play = ({ setMyChoice }: PlayProps) => {
           </div>
 
           <div
-            className='icon icon--paper h-40 w-40 bg-white border-scissorsGradient border-8 border-solid rounded-full translate-x-28 -translate-y-40 hover:scale-110 duration-300 ease-linear'
+            className='icon icon--paper h-40 w-40 bg-white border-scissorsGradient border-8 border-solid rounded-full translate-x-24 md:translate-x-28 -translate-y-40 hover:scale-110 duration-300 ease-linear'
             style={{
               backgroundImage: `url(${Scissors})`,
               backgroundPosition: 'center',
@@ -43,7 +42,7 @@ const Play = ({ setMyChoice }: PlayProps) => {
           </div>
 
           <div
-            className='icon icon--paper h-40 w-40 bg-white border-rockGradient border-8 border-solid rounded-full translate-x-2 -translate-y-10 hover:scale-110 duration-300 ease-linear'
+            className='icon icon--paper h-40 w-40 bg-white border-rockGradient border-8 border-solid rounded-full translate-x-2 -translate-y-20 md:-translate-y-10 hover:scale-110 duration-300 ease-linear'
             onClick={() => setChoice('rock')}
             style={{
               backgroundImage: `url(${Rock})`,

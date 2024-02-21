@@ -1,10 +1,8 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import RuleImg from '../assets/images/image-rules.svg';
-import Paper from '../assets/images/icon-paper.svg';
-import Rock from '../assets/images/icon-rock.svg';
-import Scissors from '../assets/images/icon-scissors.svg';
+import RuleImg from '../assets/images/image-rules.svg'
+
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(false)
@@ -19,7 +17,7 @@ export default function MyModal() {
 
   return (
     <>
-      <div className="mx-4 mt-12 w-full flex justify-center md:justify-end">
+      <div className="mx-4 mt-12 w-full flex justify-center md:justify-end mb-32">
         <button
           type="button"
           onClick={openModal}
