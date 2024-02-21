@@ -56,78 +56,119 @@ const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
   }, [bishalChoice, myChoice]);
 
   return (
-    <div className='flex mt-12 flex-nowrap items-center'>
-      <div className="flex flex-col">
-        <span className="text uppercase text-2xl mb-10 font-barlow text-center">
-          You Picked
-        </span>
-        <div
-          className={`h-60 w-60 rounded-full border-solid border-8 bg-white ${myChoice === 'rock' ? 'border-rockGradient' : myChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
-          style={{
-            backgroundImage: `${myChoice === 'rock' ? `url(${Rock})` : myChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
-            backgroundSize: '50%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-          }}
-        >
+    <>
+      <div className='flex mt-12 flex-nowrap md:items-center gap-12 md:gap-0'>
+        <div className="flex flex-col">
+          <span className="text uppercase text-2xl mb-10 font-barlow text-center">
+            You Picked
+          </span>
+          <div
+            className={`h-36 w-36 md:h-60 md:w-60 rounded-full border-solid border-8 bg-white ${myChoice === 'rock' ? 'border-rockGradient' : myChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
+            style={{
+              backgroundImage: `${myChoice === 'rock' ? `url(${Rock})` : myChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
+              backgroundSize: '50%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+            }}
+          >
+          </div>
+
+        </div>
+
+        <div className='hidden md:block'>
+          {playerWin === 'win' ? (
+            <div className="flex flex-col mx-8">
+              <span className="uppercase text-5xl mb-2 font-barlow">You Win</span>
+              <Link
+                to='/'
+                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-gray-500 font-bold text-center font-barlow  shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+                onClick={() => setBishalChoice("")}
+              >
+                Play Again
+              </Link>
+            </div>
+          ) : playerWin === 'lose' ? (
+            <div className="flex flex-col mx-8">
+              <span className="text uppercase text-5xl mb-2 font-barlow ">You Lost</span>
+              <Link
+                to='/'
+                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+                onClick={() => setBishalChoice("")}
+              >
+                Play Again
+              </Link>
+            </div>
+          ) : playerWin === 'draw' ? (
+            <div className="flex flex-col mx-8">
+              <span className="uppercase text-5xl mb-2 font-barlow">Draw</span>
+              <Link
+                to='/'
+                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+                onClick={() => setBishalChoice("")}
+              >
+                Play Again
+              </Link>
+            </div>
+          ) : null}
+        </div>
+
+        <div className="flex flex-col">
+          <span className="text uppercase text-2xl mb-10 font-barlow text-center">
+            Bishal Picked
+          </span>
+          <div
+            // className="icon icon--paper h-60 w-60 rounded-full border-solid border-8 bg-white"
+            className={`h-36 w-36 md:h-60 md:w-60 border-solid rounded-full border-8 bg-white ${bishalChoice === 'rock' ? 'border-rockGradient' : bishalChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
+            style={{
+              backgroundImage: `${bishalChoice === 'rock' ? `url(${Rock})` : bishalChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
+              backgroundSize: '50%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+            }}
+          >
+          </div>
+
         </div>
 
       </div>
 
-      {playerWin === 'win' ? (
-        <div className="flex flex-col mx-8">
-          <span className="uppercase text-5xl mb-2 font-barlow">You Win</span>
-          <Link
-            to='/'
-            className='bg-white uppercase py-2 px-4 rounded-md text-sm text-black text-center font-barlow  shadow-md shadow-gray-400'
-            onClick={() => setBishalChoice("")}
-          >
-            Play Again
-          </Link>
+      <div className='md:hidden mt-12'>
+          {playerWin === 'win' ? (
+            <div className="flex flex-col mx-8">
+              <span className="uppercase text-5xl mb-2 font-barlow">You Win</span>
+              <Link
+                to='/'
+                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-gray-500 font-bold text-center font-barlow  shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+                onClick={() => setBishalChoice("")}
+              >
+                Play Again
+              </Link>
+            </div>
+          ) : playerWin === 'lose' ? (
+            <div className="flex flex-col mx-8">
+              <span className="text uppercase text-5xl mb-2 font-barlow ">You Lost</span>
+              <Link
+                to='/'
+                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+                onClick={() => setBishalChoice("")}
+              >
+                Play Again
+              </Link>
+            </div>
+          ) : playerWin === 'draw' ? (
+            <div className="flex flex-col mx-8">
+              <span className="uppercase text-5xl mb-2 font-barlow">Draw</span>
+              <Link
+                to='/'
+                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+                onClick={() => setBishalChoice("")}
+              >
+                Play Again
+              </Link>
+            </div>
+          ) : null}
         </div>
-      ) : playerWin === 'lose' ? (
-        <div className="flex flex-col mx-8">
-          <span className="text uppercase text-5xl mb-2 font-barlow ">You Lost</span>
-          <Link
-            to='/'
-            className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-black shadow-md shadow-gray-400'
-            onClick={() => setBishalChoice("")}
-          >
-            Play Again
-          </Link>
-        </div>
-      ) : playerWin === 'draw' ? (
-        <div className="flex flex-col mx-8">
-          <span className="uppercase text-5xl mb-2 font-barlow">Draw</span>
-          <Link
-            to='/'
-            className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-black shadow-md shadow-gray-400'
-            onClick={() => setBishalChoice("")}
-          >
-            Play Again
-          </Link>
-        </div>
-      ) : null}
-
-      <div className="game__house flex flex-col">
-        <span className="text uppercase text-2xl mb-10 font-barlow text-center">
-          Bishal Picked
-        </span>
-        <div
-          // className="icon icon--paper h-60 w-60 rounded-full border-solid border-8 bg-white"
-          className={`h-60 w-60 border-solid rounded-full border-8 bg-white ${bishalChoice === 'rock' ? 'border-rockGradient' : bishalChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
-          style={{
-            backgroundImage: `${bishalChoice === 'rock' ? `url(${Rock})` : bishalChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
-            backgroundSize: '50%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-          }}
-        >
-        </div>
-
-      </div>
-
-    </div>
+    </>
   )
 }
 
