@@ -12,7 +12,7 @@ interface GameProps {
   setMyChoice: React.Dispatch<React.SetStateAction<string>>,
 }
 
-const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
+const Game = ({ myChoice, score, setScore }: GameProps) => {
 
   const [bishalChoice, setBishalChoice] = useState<string>("");
   const [playerWin, setPlayerWin] = useState<string>("");
@@ -57,7 +57,7 @@ const Game = ({ myChoice, score, setScore, setMyChoice }: GameProps) => {
 
   return (
     <>
-      <div className='flex mt-12 flex-nowrap md:items-center gap-12 md:gap-0'>
+      <div className='flex mt-12 flex-nowrap md:items-center gap-12 md:gap-0 mb-44'>
         <div className="flex flex-col">
           <span className="text uppercase text-2xl mb-10 font-barlow text-center">
             You Picked
