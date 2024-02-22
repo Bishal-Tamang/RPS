@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Triangle from '../assets/images/bg-triangle.svg';
-import Paper from '../assets/images/icon-paper.svg';
-import Rock from '../assets/images/icon-rock.svg';
-import Scissors from '../assets/images/icon-scissors.svg';
+// import Triangle from 'assets/images/bg-triangle.svg';
+// import Paper from 'assets/images/icon-paper.svg';
+// import Rock from 'assets/images/icon-rock.svg';
+// import Scissors from 'assets/images/icon-scissors.svg';
+
+import Triangle from '../../public/assets/images/bg-triangle.svg';
+import Paper from '../../public/assets/images/icon-paper.svg';
+import Rock from '../../public/assets/images/icon-rock.svg';
+import Scissors from '../../public/assets/images/icon-scissors.svg';
+
 
 interface PlayProps {
   setMyChoice: React.Dispatch<React.SetStateAction<string>>

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import Paper from '../assets/images/icon-paper.svg';
-import Rock from '../assets/images/icon-rock.svg';
-import Scissors from '../assets/images/icon-scissors.svg';
+// import Paper from 'assets/images/icon-paper.svg';
+// import Rock from 'assets/images/icon-rock.svg';
+// import Scissors from 'assets/images/icon-scissors.svg';
+import Paper from '../../public/assets/images/icon-paper.svg';
+import Rock from '../../public/assets/images/icon-rock.svg';
+import Scissors from '../../public/assets/images/icon-scissors.svg';
 
 
 interface GameProps {
@@ -57,9 +60,9 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
 
   return (
     <>
-      <div className='flex mt-12 flex-nowrap md:items-center gap-12 md:gap-0 mb-44'>
+      <div className='flex mt-6 md:mt-12 flex-nowrap md:items-center gap-12 md:gap-0 mb-4 md:mb-12'>
         <div className="flex flex-col">
-          <span className="text uppercase text-2xl mb-10 font-barlow text-center">
+          <span className="text uppercase text-2xl mb-4 md:mb-10 font-barlow text-center">
             You Picked
           </span>
           <div
@@ -72,6 +75,8 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
             }}
           >
           </div>
+
+
 
         </div>
 
@@ -113,7 +118,7 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
         </div>
 
         <div className="flex flex-col">
-          <span className="text uppercase text-2xl mb-10 font-barlow text-center">
+          <span className="text uppercase text-2xl mb-4 md:mb-10 font-barlow text-center">
             Bishal Picked
           </span>
           <div
@@ -132,42 +137,42 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
 
       </div>
 
-      <div className='md:hidden mt-12'>
-          {playerWin === 'win' ? (
-            <div className="flex flex-col mx-8">
-              <span className="uppercase text-5xl mb-2 font-barlow">You Win</span>
-              <Link
-                to='/'
-                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-gray-500 font-bold text-center font-barlow  shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
-                onClick={() => setBishalChoice("")}
-              >
-                Play Again
-              </Link>
-            </div>
-          ) : playerWin === 'lose' ? (
-            <div className="flex flex-col mx-8">
-              <span className="text uppercase text-5xl mb-2 font-barlow ">You Lost</span>
-              <Link
-                to='/'
-                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
-                onClick={() => setBishalChoice("")}
-              >
-                Play Again
-              </Link>
-            </div>
-          ) : playerWin === 'draw' ? (
-            <div className="flex flex-col mx-8">
-              <span className="uppercase text-5xl mb-2 font-barlow">Draw</span>
-              <Link
-                to='/'
-                className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
-                onClick={() => setBishalChoice("")}
-              >
-                Play Again
-              </Link>
-            </div>
-          ) : null}
-        </div>
+      <div className='md:hidden'>
+        {playerWin === 'win' ? (
+          <div className="flex flex-col mx-8">
+            <span className="uppercase text-5xl mb-2 font-barlow">You Win</span>
+            <Link
+              to='/'
+              className='bg-white uppercase py-2 px-4 rounded-md text-sm text-gray-500 font-bold text-center font-barlow  shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+              onClick={() => setBishalChoice("")}
+            >
+              Play Again
+            </Link>
+          </div>
+        ) : playerWin === 'lose' ? (
+          <div className="flex flex-col mx-8">
+            <span className="text uppercase text-5xl mb-2 font-barlow ">You Lost</span>
+            <Link
+              to='/'
+              className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+              onClick={() => setBishalChoice("")}
+            >
+              Play Again
+            </Link>
+          </div>
+        ) : playerWin === 'draw' ? (
+          <div className="flex flex-col mx-8">
+            <span className="uppercase text-5xl mb-2 font-barlow">Draw</span>
+            <Link
+              to='/'
+              className='bg-white uppercase py-2 px-4 rounded-md text-sm text-center text-gray-500 font-bold shadow-md shadow-gray-400 hover:text-red-500 cursor-pointer duration-300'
+              onClick={() => setBishalChoice("")}
+            >
+              Play Again
+            </Link>
+          </div>
+        ) : null}
+      </div>
     </>
   )
 }

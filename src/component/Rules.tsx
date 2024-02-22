@@ -1,7 +1,8 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import RuleImg from '../assets/images/image-rules.svg'
+import RuleImg from '../../public/assets/images/image-rules.svg'
+
 
 
 export default function MyModal() {
@@ -17,7 +18,7 @@ export default function MyModal() {
 
   return (
     <>
-      <div className="mx-4 mt-12 w-full flex justify-center md:justify-end mb-32">
+      <div className="mx-4 mt-12 w-full flex justify-center md:justify-end mb-24 md:mb-20 lg:mb-20 2xl:mb-60">
         <button
           type="button"
           onClick={openModal}
