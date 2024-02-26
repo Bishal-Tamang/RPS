@@ -5,8 +5,6 @@ import Play from './component/Play';
 import Game from './component/Game';
 import Rules from './component/Rules';
 
-import Test from './component/Test';
-
 import { useState } from 'react';
 
 const App = () => {
@@ -31,13 +29,6 @@ const App = () => {
             path='/game'
             element={
               <Game myChoice={myChoice} setMyChoice={setMyChoice} score={score} setScore={setScore} />
-            }
-          />
-
-          <Route 
-            path='/try'
-            element={
-              <Test />
             }
           />
 
