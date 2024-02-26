@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-// import Paper from '../../public/assets/images/icon-paper.svg';
-// import Rock from '../../public/assets/images/icon-rock.svg';
-// import Scissors from '../../public/assets/images/icon-scissors.svg';
+
 
 import Paper from '../assets/image/paperSS.png';
 import Rock from '../assets/image/RockSS.png';
@@ -179,3 +177,4 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
 }
 
 export default Game
+

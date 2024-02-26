@@ -1,14 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Triangle from '../../public/assets/images/bg-triangle.svg';
-// import Paper from '../../public/assets/images/icon-paper.svg';
-// import Rock from '../../public/assets/images/icon-rock.svg';
-// import Scissors from '../../public/assets/images/icon-scissors.svg';
 
-// import Paper from '../assets/image/icon-paper.svg';
-// import Rock from '../assets/image/icon-rock.svg';
-// import Scissors from '../assets/image/icon-scissors.svg';
+import Triangle from '../../public/assets/images/bg-triangle.svg';
+
 
 import Paper from '../assets/image/paperSS.png';
 import Rock from '../assets/image/RockSS.png';
@@ -22,6 +17,8 @@ interface PlayProps {
 const Play = ({ setMyChoice }: PlayProps) => {
   const setChoice = (choice: string) => {
     setMyChoice(choice);
+
+
   }
 
   return (
@@ -60,6 +57,7 @@ const Play = ({ setMyChoice }: PlayProps) => {
               backgroundRepeat: 'no-repeat',
             }}
           >
+
           </div>
         </Link>
       </div>
