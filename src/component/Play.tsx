@@ -6,9 +6,13 @@ import Triangle from '../../public/assets/images/bg-triangle.svg';
 // import Rock from '../../public/assets/images/icon-rock.svg';
 // import Scissors from '../../public/assets/images/icon-scissors.svg';
 
-import Paper from '../assets/image/icon-paper.svg';
-import Rock from '../assets/image/icon-rock.svg';
-import Scissors from '../assets/image/icon-scissors.svg';
+// import Paper from '../assets/image/icon-paper.svg';
+// import Rock from '../assets/image/icon-rock.svg';
+// import Scissors from '../assets/image/icon-scissors.svg';
+
+import Paper from '../assets/image/googlePaper.jpeg';
+import Rock from '../assets/image/googleRock.jpeg';
+import Scissors from '../assets/image/googleScissor.jpeg';
 
 
 interface PlayProps {
