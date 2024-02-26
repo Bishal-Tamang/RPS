@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 // import Rock from '../../public/assets/images/icon-rock.svg';
 // import Scissors from '../../public/assets/images/icon-scissors.svg';
 
-import Paper from '../assets/image/icon-paper.svg';
-import Rock from '../assets/image/icon-rock.svg';
-import Scissors from '../assets/image/icon-scissors.svg';
+import Paper from '../assets/image/paperSS.png';
+import Rock from '../assets/image/RockSS.png';
+import Scissors from '../assets/image/ScissorSS.png';
 
 
 interface GameProps {
@@ -70,7 +70,7 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
             className={`h-36 w-36 md:h-60 md:w-60 rounded-full border-solid border-8 bg-white ${myChoice === 'rock' ? 'border-rockGradient' : myChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
             style={{
               backgroundImage: `${myChoice === 'rock' ? `url(${Rock})` : myChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
-              backgroundSize: '50%',
+              // backgroundSize: '50%',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
             }}
@@ -127,7 +127,7 @@ const Game = ({ myChoice, score, setScore }: GameProps) => {
             className={`h-36 w-36 md:h-60 md:w-60 border-solid rounded-full border-8 bg-white ${bishalChoice === 'rock' ? 'border-rockGradient' : bishalChoice === 'paper' ? 'border-paperGradient' : 'border-scissorsGradient'}`}
             style={{
               backgroundImage: `${bishalChoice === 'rock' ? `url(${Rock})` : bishalChoice === 'paper' ? `url(${Paper})` : `url(${Scissors})`}`,
-              backgroundSize: '50%',
+              // backgroundSize: '50%',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
             }}
